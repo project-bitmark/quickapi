@@ -46,7 +46,7 @@ $data->network = (object)array(
   )
 );
 
-file_put_contents(API_CACHE_FILE, json_encode($data));
+file_put_contents( API_CACHE_FILE, json_encode( $data, JSON_PRETTY_PRINT ) );
 
 function askDaemon($command) {
   $ask = DAEMON_PATH . ' ' . $command;
