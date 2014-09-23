@@ -10,8 +10,7 @@
  */
 define('DAEMON_PATH', '/opt/bitmarkd');
 define('API_CACHE',  dirname(__FILE__) . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR );
-define('API_CACHE_FILENAME', 'index.json');
-define('API_CACHE_FILE', STATS_CACHE . STATS_CACHE_FILENAME);
+define('API_CACHE_FILE', API_CACHE . 'index.json');
 
 $data = (object)array(
   'generated' => 0,
