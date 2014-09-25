@@ -11,6 +11,7 @@
 define('DAEMON_PATH', '/opt/bitmarkd');
 define('API_CACHE',  dirname(__FILE__) . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR );
 define('API_CACHE_FILE', API_CACHE . 'index.json');
+define('NETWORKHASH_CACHE_FILE', API_CACHE . 'networkhashps.json');
 
 $data = (object)array(
   'generated' => 0,
@@ -47,6 +48,7 @@ $data->network = (object)array(
 );
 
 file_put_contents( API_CACHE_FILE, json_encode( $data, JSON_PRETTY_PRINT ) );
+file_put_contents( NETWORKHASH_CACHE_FILE, json_encode( $data->network->hashrates->b120 ) );
 
 function askDaemon($command) {
   $ask = DAEMON_PATH . ' ' . $command;
